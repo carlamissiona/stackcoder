@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package stackcoder;
+
+option go_package = "./proto;stackcoder";
+
+service Stackcoder {
+	rpc Call(Request) returns (Response) {} 
+	rpc Hints(HintsRequest) returns (Response) {} 	
+	rpc Tutorials(TutorialsRequest) returns (Response) {} 
+	rpc Users(UsersRequest) returns (Response) {} 
+} 
+
+message Message {
+	string say = 1;
+}
+
+
+message UsersRequest {
+	string id = 1;
+}
+message HintsRequest {
+	string id = 1;
+}
+message TutorialsRequest {
+	string id = 1;
+}
+
+message Request {
+	string name = 1;
+}
+
+message Response {
+	string msg = 1;
+}
+ 
